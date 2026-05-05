@@ -5,27 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IfPet - História</title>
-    <script>
-        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
-            window.location.href = 'index.html';
-        }
-    </script>
 </head>
 
 <body>
-    <table width="100%" border="0">
+    <table style="width: 100%; border: 0;">
         <tr>
-            <td align="left">
+            <td style="text-align: left;">
                 <h1>🐾 IfPet</h1>
             </td>
-            <td align="right">
-                <table border="1" cellpadding="5">
+            <td style="text-align: right;">
+                <table border="1" style="border-collapse: collapse;">
                     <tr>
-                        <td><a href="home.html">Home</a></td>
-                        <td><a href="historia.html">História</a></td>
-                        <td><a href="cadastro.html">Cadastro</a></td>
-                        <td><a href="consulta.html">Consulta</a></td>
-                        <td><a href="index.html" onclick="sessionStorage.clear()">Sair</a></td>
+                        <td style="padding: 5px;"><a href="index.html">Home</a></td>
+                        <td style="padding: 5px;"><a href="historia.html">História</a></td>
+                        <td style="padding: 5px;"><a href="cadastro.html">Cadastro</a></td>
+                        <td style="padding: 5px;"><a href="consulta.html">Consulta</a></td>
+                        <td style="padding: 5px;"><a href="login.html">Login</a></td>
                     </tr>
                 </table>
             </td>
@@ -34,11 +29,11 @@
 
     <hr>
 
-    <div align="center">
+    <div style="text-align: center;">
         <h2>Nossa História</h2>
-        <table width="800" border="0" cellpadding="10">
+        <table style="width: 800px; border: 0; margin-left: auto; margin-right: auto;">
             <tr>
-                <td>
+                <td style="padding: 10px;">
                     <p>O IfPet nasceu de um projeto acadêmico focado em facilitar a gestão de pet shops modernos. Nossa
                         missão é unir tecnologia e amor aos animais para oferecer uma experiência única aos donos e seus
                         pets.</p>
@@ -47,25 +42,25 @@
         </table>
 
         <h2>Divisão de Tarefas</h2>
-        <table border="1" cellpadding="10" width="600">
+        <table border="1" style="width: 600px; border-collapse: collapse; margin-left: auto; margin-right: auto;">
             <thead>
                 <tr>
-                    <th>Integrante</th>
-                    <th>Tarefa Realizada</th>
+                    <th style="padding: 10px;">Integrante</th>
+                    <th style="padding: 10px;">Tarefa Realizada</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Brian</td>
-                    <td>Implementação das páginas de CRUD (Cadastro e Consulta)</td>
+                    <td style="padding: 10px;">Brian</td>
+                    <td style="padding: 10px;">Implementação das páginas de CRUD (Cadastro e Consulta)</td>
                 </tr>
                 <tr>
-                    <td>Luiz</td>
-                    <td>Desenvolvimento das páginas Home e Login</td>
+                    <td style="padding: 10px;">Luiz</td>
+                    <td style="padding: 10px;">Desenvolvimento das páginas Home e Login</td>
                 </tr>
                 <tr>
-                    <td>Lucas</td>
-                    <td>Criação do design (HTML Puro) e página de História</td>
+                    <td style="padding: 10px;">Lucas</td>
+                    <td style="padding: 10px;">Criação do design (HTML Puro) e página de História</td>
                 </tr>
 
             </tbody>
@@ -73,19 +68,19 @@
 
         <br>
         <h2>Nossa Equipe</h2>
-        <table border="1" cellpadding="10">
+        <table border="1" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
             <tr>
-                <td align="center">
+                <td style="text-align: center; padding: 10px;">
                     <img src="img/Brian.jpeg" alt="Foto Brian"
                         style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"><br>
                     <strong>Brian</strong>
                 </td>
-                <td align="center">
+                <td style="text-align: center; padding: 10px;">
                     <img src="img/Lucas.jpeg" alt="Foto Lucas"
                         style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"><br>
                     <strong>Lucas</strong>
                 </td>
-                <td align="center">
+                <td style="text-align: center; padding: 10px;">
                     <img src="img/Luiz.jpeg" alt="Foto Luiz"
                         style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"><br>
                     <strong>Luiz</strong>
@@ -96,7 +91,7 @@
 
     <hr>
 
-    <div align="center">
+    <div style="text-align: center;">
         <p>Desenvolvido por Brian, Lucas e Luiz</p>
     </div>
 </body>

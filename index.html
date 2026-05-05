@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IfPet - Login</title>
+    <title>IfPet - Home</title>
 </head>
-<body>
-    <div align="center">
-        <h1>🐾 IfPet</h1>
-        <hr>
-        <h2>Acesso ao Sistema</h2>
-        <table border="1" cellpadding="10">
-            <tr>
-                <td>
-                    <form id="loginForm">
-                        <p>
-                            <label for="username">Usuário:</label><br>
-                            <input type="text" id="username" name="username" required>
-                        </p>
-                        <p>
-                            <label for="password">Senha:</label><br>
-                            <input type="password" id="password" name="password" required>
-                        </p>
-                        <p align="center">
-                            <input type="submit" value="Entrar no Sistema">
-                        </p>
-                    </form>
-                </td>
-            </tr>
-        </table>
-        <p><i>Dica: Use qualquer usuário e senha para entrar.</i></p>
-    </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // In a real system, we would check credentials here.
-            // For this project, we just set the login flag.
-            sessionStorage.setItem('isLoggedIn', 'true');
-            window.location.href = 'home.html';
-        });
-    </script>
+<body>
+    <table style="width: 100%; border: 0;">
+        <tr>
+            <td style="text-align: left;">
+                <h1>🐾 IfPet</h1>
+            </td>
+            <td style="text-align: right;">
+                <table border="1" style="border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 5px;"><a href="index.html">Home</a></td>
+                        <td style="padding: 5px;"><a href="historia.html">História</a></td>
+                        <td style="padding: 5px;"><a href="cadastro.html">Cadastro</a></td>
+                        <td style="padding: 5px;"><a href="consulta.html">Consulta</a></td>
+                        <td style="padding: 5px;"><a href="login.html">Login</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 
     <hr>
 
-    <div align="center">
+    <div style="text-align: center;">
+        <img src="img/banner.png" alt="IfPet Banner" width="800">
+        <h1>Bem-vindo ao IfPet</h1>
+        <p>Cuidado, carinho e dedicação para o seu melhor amigo.</p>
+    </div>
+
+    <table style="width: 800px; margin-left: auto; margin-right: auto; border: 0;">
+        <tr>
+            <td style="padding: 20px;">
+                <h2>O que fazemos?</h2>
+                <p>No IfPet, acreditamos que cada animal merece o melhor tratamento possível. Oferecemos serviços de
+                    banho, tosa, consultas veterinárias e uma ampla variedade de produtos premium para o seu pet.</p>
+                <p>Navegue pelo nosso site para conhecer nossa história ou realizar o cadastro do seu animalzinho!</p>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div style="text-align: center;">
         <p>Desenvolvido por Brian, Lucas e Luiz</p>
     </div>
 </body>
