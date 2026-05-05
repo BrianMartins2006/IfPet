@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IfPet - Login</title>
+</head>
+<body>
+    <div align="center">
+        <h1>🐾 IfPet</h1>
+        <hr>
+        <h2>Acesso ao Sistema</h2>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>
+                    <form id="loginForm">
+                        <p>
+                            <label for="username">Usuário:</label><br>
+                            <input type="text" id="username" name="username" required>
+                        </p>
+                        <p>
+                            <label for="password">Senha:</label><br>
+                            <input type="password" id="password" name="password" required>
+                        </p>
+                        <p align="center">
+                            <input type="submit" value="Entrar no Sistema">
+                        </p>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <p><i>Dica: Use qualquer usuário e senha para entrar.</i></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real system, we would check credentials here.
+            // For this project, we just set the login flag.
+            sessionStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'home.html';
+        });
+    </script>
+
+    <hr>
+
+    <div align="center">
+        <p>Desenvolvido por Brian, Lucas e Luiz</p>
+    </div>
+</body>
+</html>

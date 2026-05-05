@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IfPet - História</title>
+    <script>
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+
+<body>
+    <table width="100%" border="0">
+        <tr>
+            <td align="left">
+                <h1>🐾 IfPet</h1>
+            </td>
+            <td align="right">
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <td><a href="home.html">Home</a></td>
+                        <td><a href="historia.html">História</a></td>
+                        <td><a href="cadastro.html">Cadastro</a></td>
+                        <td><a href="consulta.html">Consulta</a></td>
+                        <td><a href="index.html" onclick="sessionStorage.clear()">Sair</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div align="center">
+        <h2>Nossa História</h2>
+        <table width="800" border="0" cellpadding="10">
+            <tr>
+                <td>
+                    <p>O IfPet nasceu de um projeto acadêmico focado em facilitar a gestão de pet shops modernos. Nossa
+                        missão é unir tecnologia e amor aos animais para oferecer uma experiência única aos donos e seus
+                        pets.</p>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Divisão de Tarefas</h2>
+        <table border="1" cellpadding="10" width="600">
+            <thead>
+                <tr>
+                    <th>Integrante</th>
+                    <th>Tarefa Realizada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brian</td>
+                    <td>Implementação das páginas de CRUD (Cadastro e Consulta)</td>
+                </tr>
+                <tr>
+                    <td>Luiz</td>
+                    <td>Desenvolvimento das páginas Home e Login</td>
+                </tr>
+                <tr>
+                    <td>Lucas</td>
+                    <td>Criação do design (HTML Puro) e página de História</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <br>
+        <h2>Nossa Equipe</h2>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td align="center">
+                    <img src="img/Brian.jpeg" alt="Foto Brian"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"><br>
+                    <strong>Brian</strong>
+                </td>
+                <td align="center">
+                    <img src="img/Lucas.jpeg" alt="Foto Lucas"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"><br>
+                    <strong>Lucas</strong>
+                </td>
+                <td align="center">
+                    <img src="img/Luiz.jpeg" alt="Foto Luiz"
+                        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"><br>
+                    <strong>Luiz</strong>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <div align="center">
+        <p>Desenvolvido por Brian, Lucas e Luiz</p>
+    </div>
+</body>
+
+</html>

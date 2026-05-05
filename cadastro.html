@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IfPet - Cadastro</title>
+    <script>
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+    <table width="100%" border="0">
+        <tr>
+            <td align="left">
+                <h1>🐾 IfPet</h1>
+            </td>
+            <td align="right">
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <td><a href="home.html">Home</a></td>
+                        <td><a href="historia.html">História</a></td>
+                        <td><a href="cadastro.html">Cadastro</a></td>
+                        <td><a href="consulta.html">Consulta</a></td>
+                        <td><a href="index.html" onclick="sessionStorage.clear()">Sair</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div align="center">
+        <h2>Cadastro de Novo Pet</h2>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>
+                    <form id="petForm">
+                        <p>
+                            <label for="petName">Nome do Pet:</label><br>
+                            <input type="text" id="petName" name="petName" required>
+                        </p>
+                        <p>
+                            <label for="species">Espécie:</label><br>
+                            <select id="species" name="species" required>
+                                <option value="">Selecione...</option>
+                                <option value="Cão">Cão</option>
+                                <option value="Gato">Gato</option>
+                                <option value="Pássaro">Pássaro</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="breed">Raça:</label><br>
+                            <input type="text" id="breed" name="breed" required>
+                        </p>
+                        <p>
+                            <label for="owner">Nome do Responsável:</label><br>
+                            <input type="text" id="owner" name="owner" required>
+                        </p>
+                        <p align="center">
+                            <input type="submit" value="Cadastrar Pet">
+                        </p>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Check if we are editing
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit');
+
+        if (editId) {
+            document.querySelector('h2').innerText = 'Atualizar Pet';
+            document.querySelector('input[type="submit"]').value = 'Atualizar Pet';
+            
+            const pets = JSON.parse(localStorage.getItem('ifPetData') || '[]');
+            const pet = pets.find(p => p.id == editId);
+            
+            if (pet) {
+                document.getElementById('petName').value = pet.name;
+                document.getElementById('species').value = pet.species;
+                document.getElementById('breed').value = pet.breed;
+                document.getElementById('owner').value = pet.owner;
+            }
+        }
+
+        document.getElementById('petForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const petData = {
+                id: editId ? parseInt(editId) : Date.now(),
+                name: document.getElementById('petName').value,
+                species: document.getElementById('species').value,
+                breed: document.getElementById('breed').value,
+                owner: document.getElementById('owner').value
+            };
+
+            let pets = JSON.parse(localStorage.getItem('ifPetData') || '[]');
+            
+            if (editId) {
+                // Update existing
+                const index = pets.findIndex(p => p.id == editId);
+                if (index !== -1) pets[index] = petData;
+            } else {
+                // Add new
+                pets.push(petData);
+            }
+
+            localStorage.setItem('ifPetData', JSON.stringify(pets));
+
+            alert(editId ? 'Pet atualizado!' : 'Pet cadastrado!');
+            window.location.href = 'consulta.html';
+        });
+    </script>
+
+    <hr>
+
+    <div align="center">
+        <p>Desenvolvido por Brian, Lucas e Luiz</p>
+    </div>
+</body>
+</html>

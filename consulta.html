@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IfPet - Consulta</title>
+    <script>
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body onload="loadPets()">
+    <table width="100%" border="0">
+        <tr>
+            <td align="left">
+                <h1>🐾 IfPet</h1>
+            </td>
+            <td align="right">
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <td><a href="home.html">Home</a></td>
+                        <td><a href="historia.html">História</a></td>
+                        <td><a href="cadastro.html">Cadastro</a></td>
+                        <td><a href="consulta.html">Consulta</a></td>
+                        <td><a href="index.html" onclick="sessionStorage.clear()">Sair</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div align="center">
+        <h2>Pets Cadastrados</h2>
+        <table border="1" cellpadding="10" width="800" id="petsTable">
+            <thead>
+                <tr>
+                    <th>Nome do Pet</th>
+                    <th>Espécie</th>
+                    <th>Raça</th>
+                    <th>Responsável</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="petsBody">
+                <!-- Data will be loaded here -->
+            </tbody>
+        </table>
+        <p id="noDataMsg" style="display:none;">Nenhum pet cadastrado.</p>
+    </div>
+
+    <script>
+        function loadPets() {
+            const pets = JSON.parse(localStorage.getItem('ifPetData') || '[]');
+            const tbody = document.getElementById('petsBody');
+            const noDataMsg = document.getElementById('noDataMsg');
+            
+            tbody.innerHTML = '';
+
+            if (pets.length === 0) {
+                noDataMsg.style.display = 'block';
+                return;
+            }
+
+            noDataMsg.style.display = 'none';
+
+            pets.forEach((pet, index) => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${pet.name}</td>
+                    <td>${pet.species}</td>
+                    <td>${pet.breed}</td>
+                    <td>${pet.owner}</td>
+                    <td align="center">
+                        <a href="cadastro.html?edit=${pet.id}">Atualizar</a> | 
+                        <a href="#" onclick="deletePet(${pet.id})">Remover</a>
+                    </td>
+                `;
+            });
+        }
+
+        function deletePet(id) {
+            if (confirm('Deseja realmente remover este pet?')) {
+                let pets = JSON.parse(localStorage.getItem('ifPetData') || '[]');
+                pets = pets.filter(p => p.id !== id);
+                localStorage.setItem('ifPetData', JSON.stringify(pets));
+                loadPets();
+            }
+        }
+    </script>
+
+    <hr>
+
+    <div align="center">
+        <p>Desenvolvido por Brian, Lucas e Luiz</p>
+    </div>
+</body>
+</html>

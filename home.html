@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IfPet - Home</title>
+    <script>
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+
+<body>
+    <table width="100%" border="0">
+        <tr>
+            <td align="left">
+                <h1>🐾 IfPet</h1>
+            </td>
+            <td align="right">
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <td><a href="home.html">Home</a></td>
+                        <td><a href="historia.html">História</a></td>
+                        <td><a href="cadastro.html">Cadastro</a></td>
+                        <td><a href="consulta.html">Consulta</a></td>
+                        <td><a href="index.html" onclick="sessionStorage.clear()">Sair</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div align="center">
+        <img src="img/banner.png" alt="IfPet Banner" width="800">
+        <h1>Bem-vindo ao IfPet</h1>
+        <p>Cuidado, carinho e dedicação para o seu melhor amigo.</p>
+    </div>
+
+    <table width="800" align="center" border="0" cellpadding="20">
+        <tr>
+            <td>
+                <h2>O que fazemos?</h2>
+                <p>No IfPet, acreditamos que cada animal merece o melhor tratamento possível. Oferecemos serviços de
+                    banho, tosa, consultas veterinárias e uma ampla variedade de produtos premium para o seu pet.</p>
+                <p>Navegue pelo nosso site para conhecer nossa história ou realizar o cadastro do seu animalzinho!</p>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div align="center">
+        <p>Desenvolvido por Brian, Lucas e Luiz</p>
+    </div>
+</body>
+
+</html>
